@@ -4,15 +4,17 @@ function segregateNames() {
   let almarhumList = [];
   let almarhumahList = [];
 
-  for (let name of namesArray) {
-    let cleanedName = name.trim().replace(/[^\w\s\/]/gi, '').replace(/\s+/g, ' ');
+  for (let i = 0; i < namesArray.length; i++) { 
+    let name = namesArray[i];
+
+    // Remove numbers and punctuation ONLY at the beginning of the string
+    let cleanedName = name.trim().replace(/^[0-9\.\s]+/, '').replace(/[^\w\s\/]/gi, '').replace(/\s+/g, ' '); 
     cleanedName = cleanedName.toLowerCase(); 
 
-    // Use a single regex with all the patterns
     if (/\b(bin|s\/o)\b/.test(cleanedName)) {
-      almarhumList.push(name);
-    } else if (/\b(binti|d\/o|binte)\b/.test(cleanedName)) {
-      almarhumahList.push(name);
+      almarhumList.push((almarhumList.length + 1) + ". " + cleanedName); 
+    } else if (/\b(binti|d\/o|binte|bte)\b/.test(cleanedName)) {
+      almarhumahList.push((almarhumahList.length + 1) + ". " + cleanedName); 
     }
   }
 
