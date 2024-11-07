@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+}
+
+#inputArea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+#almarhumOutput, #almarhumahOutput {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px;
+}
