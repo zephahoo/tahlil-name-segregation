@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Name Segregation</title>
+  <title>Name Segregator</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    #outputArea { 
+      display: none; 
+    }
+  </style>
 </head>
 <body>
+
   <h1>Name Segregator</h1>
-  <textarea id="inputArea" placeholder="Paste names here (one per line)(only for names that are included with 'bin' or 'binte')"></textarea>
-  <button onclick="segregateNames()">Segregate</button>
 
-  <h2>Almarhum</h2>
-  <div id="almarhumOutput"></div>
+  <textarea id="inputArea" rows="10" cols="50" placeholder="Enter names separated by new lines"></textarea><br>
+  <button onclick="segregateNames()">Segregate</button> 
 
-  <h2>Almarhumah</h2>
-  <div id="almarhumahOutput"></div>
+  <div id="outputArea">
+    <h2>Almarhum</h2>
+    <div id="almarhumOutput"></div>
 
-  <script src="script.js"></script>
+    <h2>Almarhumah</h2>
+    <div id="almarhumahOutput"></div>
+  </div>
+
+  <script src="script.js"></script> 
+
 </body>
 </html>
