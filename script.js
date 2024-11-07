@@ -7,9 +7,13 @@ function segregateNames() {
   for (let name of namesArray) {
     // Remove hidden characters and normalize spaces
     let cleanedName = name.trim().replace(/[^\w\s]/gi, '').replace(/\s+/g, ' '); 
-    if (/\bbin\b/i.test(cleanedName)) {
+    if (/\b(bin|S\/O)\b/i.test(cleanedName)) { // Added S/O to almarhumList condition
       almarhumList.push(name);
-    } else if (/\bbinte\b/i.test(cleanedName)) {
+    } else if (/\b(binti|D\/O)\b/i.test(cleanedName)) { 
+      almarhumahList.push(name);
+    } 
+    // Additional check for 'binte' (without removing the existing code)
+    else if (/\bbinte\b/i.test(cleanedName)) {
       almarhumahList.push(name);
     }
   }
