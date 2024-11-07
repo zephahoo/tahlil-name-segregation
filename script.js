@@ -7,8 +7,7 @@ function segregateNames() {
   for (let i = 0; i < namesArray.length; i++) { 
     let name = namesArray[i];
 
-    // Remove numbers and punctuation ONLY at the beginning of the string
-    let cleanedName = name.trim().replace(/^[0-9\.\s]+/, '').replace(/[^\w\s\/]/gi, '').replace(/\s+/g, ' '); 
+    let cleanedName = name.trim().replace(/^[0-9\.\s]+/, '').replace(/[^\w\s\/]/gi, '').replace(/\s+/g, ' ');
     cleanedName = cleanedName.toLowerCase(); 
 
     if (/\b(bin|s\/o)\b/.test(cleanedName)) {
@@ -20,4 +19,6 @@ function segregateNames() {
 
   document.getElementById("almarhumOutput").innerText = almarhumList.join("\n");
   document.getElementById("almarhumahOutput").innerText = almarhumahList.join("\n");
+
+  document.getElementById("outputArea").style.display = "block"; 
 }
